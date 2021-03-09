@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\ContactRepository;
+use Symfony\Component\Validator\Constraints\DateTime;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -37,9 +38,9 @@ class Contact
      */
     private $created_at;
 
-      public function __construct()
+    public function __construct()
     {
-        $this->created_at = new DateTime();
+        $this->created_at = new \DateTime();
     }
 
     public function getId(): ?int

@@ -2,11 +2,16 @@
 
 namespace App\Controller;
 
+use App\Repository\ContactRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use app\Entity\Contact;
+use App\Entity\Contact;
+
+/**
+ * @Route("/", name="exam_")
+ */
 
 class DefaultController extends AbstractController
 {
@@ -14,15 +19,17 @@ class DefaultController extends AbstractController
      * @Route("/", name="default")
      * @return Response
      */
-    public function index(): Response
+    public function index(ContactRepository $contactRepository): Response
     {
+        $contacts = $contactRepository->findAll();
+
         return $this->render('default/index.html.twig', [
-            'controller_name' => 'DefaultController',
+            'contacts' => $contacts,
         ]);
     }
 
     /**
-     * @Route("/contact", name="default")
+     * @Route("/contact", name="contact")
      * @param EntityManagerInterface $entityManager
      * @param Contact|null $contact
      * @return Response

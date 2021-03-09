@@ -7,4 +7,25 @@
         <h1>{{ 'un'|capitalize }} {{ 'titre'|capitalize }} {{ 'magnifique'|capitalize }}</h1>
     {% endblock %}
 
+    <table>
+        <tr>
+            <th>Identifiant</th>
+            <th>Email</th>
+            <th>Sujet</th>
+            <th>Message</th>
+            <th>Date d'envoi</th>
+
+        </tr>
+        {% for contact in contacts %}
+            <tr>
+                <td>{{ contact.id }}</td>
+                <td>{{ contact.email }}</td>
+                <td>{{ contact.subject }}</td>
+                <td>{{ contact.message }}</td>
+                <td>Solution qui marche pas en commentaire du code :D</td>
+                {# <td>{{ contact.created_at ? contact.created_at|date('Y-m-d H:i:s') : ''  }}</td> #}
+            </tr>
+        {% endfor %}
+    </table>
+
 {% endblock %}
