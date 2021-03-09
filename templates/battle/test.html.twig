@@ -15,8 +15,8 @@
             {% for run in runs %}
                 <li>
                     <h3>Tour {{ loop.index / 2 | round(0, 'floor') }} </h3>
-                    {{ attacker }} attaque {{ defender }} !<br />
-                    {% if run.damage > 0 %}
+                    {{ run.attacker }} attaque {{ run.defender }} !<br />
+                    {% if run.damages > 0 %}
                         {{ run.attacker }} inflige {{ run.damages }} dégâts à {{ run.defender }} !
                     {% else %}
                         {{ run.attacker }} a raté son attaque !

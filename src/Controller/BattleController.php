@@ -60,7 +60,8 @@ class BattleController extends AbstractController
     {
         $attacks = [];
 
-        while (!$attacker->hasGivenUp() && $defender->hasGivenUp()) {
+//        while (!$attacker->hasGivenUp() && $defender->hasGivenUp())
+        for($i=0; $i < 5; $i++) {
             $attacks[] = $this->runAttack($attacker, $defender);
 
             if (!$defender->hasGivenUp()) {
@@ -73,15 +74,15 @@ class BattleController extends AbstractController
 
     protected function runAttack(Character $attacker, Character $defender): array
     {
-        $damage = $this->actionResolver->attack($attacker, $defender);
-        if ($damage < 0) {
-            $defender->getHit($damage);
+        $damages = $this->actionResolver->attack($attacker, $defender);
+        if ($damages > 0) {
+            $defender->getHit($damages);
         }
 
         return [
             'attacker'     => $attacker->getName(),
             'defender'     => $defender->getName(),
-            'damage'       => $damage,
+            'damages'      => $damages,
             'attackerWins' => $defender->hasGivenUp(),
         ];
     }
