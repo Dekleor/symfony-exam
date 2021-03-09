@@ -1,0 +1,14 @@
+{% extends ['base.html.twig', 'layout.twig.html'] %}
+
+{% block title %}Hello DefaultController!{% endblock %}
+
+{% block body %}
+    {% block header %}
+        <h1>Nous Contacter</h1>
+    {% endblock %}
+
+    {% block content %}
+        <p>Nous sommes actuellement le : {{ 'now'|format_datetime('full', 'full', locale='fr') }}</p>
+    {% endblock %}
+
+{% endblock %}
