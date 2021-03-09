@@ -10,14 +10,14 @@
         <p>
             Le combat démarre !
         </p>
+        {{ dump(runs) }}
         <ol>
             {% for run in runs %}
                 <li>
-                    <h3>Tour {{ round((loop.index / 2), 0, 'floor' ) }}</h3>
+                    <h3>Tour {{ loop.index / 2 | round(0, 'floor') }} </h3>
                     {{ attacker }} attaque {{ defender }} !<br />
-                    {% if run.damage < 0 %}
+                    {% if run.damage > 0 %}
                         {{ run.attacker }} inflige {{ run.damages }} dégâts à {{ run.defender }} !
-                    {% endif %}
                     {% else %}
                         {{ run.attacker }} a raté son attaque !
                     {% endif %}

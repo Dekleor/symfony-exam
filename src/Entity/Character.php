@@ -30,7 +30,7 @@ class Character
     /**
      * @ORM\Column(type="smallint")
      */
-    private $strength;
+    public $strength;
 
     /**
      * @ORM\Column(type="smallint")
@@ -40,7 +40,7 @@ class Character
     /**
      * @ORM\Column(type="smallint")
      */
-    private $defense;
+    public $defense;
 
     public function getId(): ?int
     {

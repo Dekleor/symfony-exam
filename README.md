@@ -162,18 +162,18 @@ Gimli et Legolas ont décidé de s'entrainer à nouveau ! Ils vont à nouveau s'
 - [ ] Un ensemble de règles de validation, définie dans l'entité liée au formulaire
 - [ ] Un fichier PHP définissant le rendu du formulaire
 - [ ] Un fichier Twig permettant de changer l'affichage des formulaires du site (tous ou seulement certains)
-- [ ] Un fichier de configuration permettant de définir l'affichage de tous les formulaires du site
+- [X] Un fichier de configuration permettant de définir l'affichage de tous les formulaires du site
 
 ### 6.2. Qu'est-ce qu'un ParamConverter ?
 
 - [ ] Un outil de Doctrine permettant de convertir les paramètres d'une action en entrée dans une table de la BdD
-- [ ] Un outil permettant de convertir les paramètres d'une méthode d'un service en un service
+- [X] Un outil permettant de convertir les paramètres d'une méthode d'un service en un service
 - [ ] Un outil permettant de convertir l'objet Request en un paramètre d'une vue Twig
 - [ ] Un outil permettant de convertir les paramètres des routes en objets 
 
 ### 6.3. Quelle suite de commandes fonctionne pour créer un projet et lancer le serveur local ?
 
-- [ ] `symfony new --full new_project`, `composer install`, `symfony serve`
+- [X] `symfony new --full new_project`, `composer install`, `symfony serve`
 - [ ] `symfony new --full new_project`, `cd new_project`, `symfony serve`
 - [ ] `composer install`, `cd new_project`, `symfony serve`
 - [ ]`symfony serve`, `composer install`
@@ -183,11 +183,11 @@ Gimli et Legolas ont décidé de s'entrainer à nouveau ! Ils vont à nouveau s'
 #### 6.4.1. Quel nom de fichier de traduction est correct pour le domain `front` ?
 
 - [ ] `front.yml`
-- [ ] `front.fr.yml`
+- [X] `front.fr.yml`
 - [ ] `translations.front.fr.yml`
 
 #### 6.4.2. Quel appel d'une traduction est correct ?
 
 - `{{ 'Ceci est une traduction' }}`
-- `{{ 'Ceci est une traduction'|trans('front') }}`
+- [X]`{{ 'Ceci est une traduction'|trans('front') }}`
 - `{{ 'Ceci est une traduction'|trans({}, 'front') }}`
